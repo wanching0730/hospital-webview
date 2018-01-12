@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Vinkas\Firebase\Auth\Http;
 
 use Illuminate\Http\Request;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Vinkas\Firebase\Auth\Http;
 
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
