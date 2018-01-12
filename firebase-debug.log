@@ -1,0 +1,25 @@
+[debug] [2018-01-12T11:07:08.071Z] ----------------------------------------------------------------------
+[debug] [2018-01-12T11:07:08.071Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase init
+[debug] [2018-01-12T11:07:08.071Z] CLI Version:   3.15.2
+[debug] [2018-01-12T11:07:08.071Z] Platform:      win32
+[debug] [2018-01-12T11:07:08.071Z] Node Version:  v8.9.0
+[debug] [2018-01-12T11:07:08.071Z] Time:          Fri Jan 12 2018 19:07:08 GMT+0800 (Malay Peninsula Standard Time)
+[debug] [2018-01-12T11:07:08.071Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-01-12T11:07:08.086Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase"]
+[debug] [2018-01-12T11:07:08.086Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\wamp64\www\pmanager-master
+
+Before we get started, keep in mind:
+
+  * You are currently outside your home directory
+
