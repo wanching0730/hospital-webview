@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Hospital</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -38,7 +38,7 @@
         
       @else
         <li><a href="{{ route('home') }}">Overview</a></li>
-        <li><a href="#">Doctors</a></li>
+        <li><a href="{{ route('doctors.index') }}">Doctors</a></li>
         <li><a href="#">Contact Us</a></li>
         <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i> 
@@ -72,10 +72,16 @@
 
 </br>
   
-<div class="row">
-    @yield('content')
-</div>
-                
+<div class="container" >
+
+@include('partials.errors')
+@include('partials.success')
+
+    <div class="row">
+        @yield('content')
+    
+    </div>
+ </div>         
 
 </body>
 </html>

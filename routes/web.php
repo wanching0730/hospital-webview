@@ -19,12 +19,11 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('doctor', 'DoctorsController');
-Route::resource('appointment', 'AppointmentsController');
+Route::resource('doctors', 'DoctorsController');
 Route::resource('users', 'UsersController');
 
+Route::get('appointments/{doctor_id}', 'AppointmentsController@index')->name('appointments.index');
+Route::resource('appointments', 'AppointmentsController', ['except' => ['index']]);
 
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('appointments/{doctor_id}', 'AppointmentsController@index')->name('appointments.index');

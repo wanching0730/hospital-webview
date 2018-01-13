@@ -4,21 +4,16 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Project extends Model
+class Appointment extends Model
 {
     protected $fillable = [
-        'name',
+        'patient_id', 'patient_name',
         'description',
-        'company_id',
-        'user_id',
-        'days'
+        'doctor_id',
+        'date', 'time'
     ];
 
-    public function users(){
-        return $this->belongsToMany('App\User');
-    }
-
-    public function company(){
-        return $this->belongsTo('App\Company');
+    public function doctor(){
+        return $this->belongsTo('App\Doctor');
     }
 }

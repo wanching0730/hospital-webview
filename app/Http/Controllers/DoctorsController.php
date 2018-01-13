@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Company;
+use App\Doctor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -40,66 +40,67 @@ class DoctorsController extends Controller
     public function store(Request $request)
     {
         if(Auth::check()){
-            $company = Doctor::create([
+            $doctor = Doctor::create([
                 'name' => $request->input('name'),
-                'description' => $request->input('description'),
+                'position' => $request->input('position'),
+                'age' => $request->input('age'),
+                'email' => $request->input('email'),
+                'contact_number' => $request->input('contact_number'),
                 'user_id' => Auth::user()->id
             ]);
 
-            if($company){
-                return redirect()->route('doctors.show', ['company' => $company->id])
-                ->with('success', 'Company created successfully');
+            if($doctor){
+                return redirect()->route('doctors.show', ['doctor' => $doctor->id])
+                ->with('success', 'Doctor was added successfully');
             }
         }
 
-        return back()->withInput()->with('error', 'Error in creating new company');
+        return back()->withInput()->with('error', 'Error in adding new doctor');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Company  $company
+     * @param  \App\Models\Doctor  $company
      * @return \Illuminate\Http\Response
      */
-    public function show(Company $company)
+    public function show(Doctor $doctor)
     {
-        //search database to find matched ID
-        //$company = Company::where('id', $company->id)->first();
-
-        //$company = Company::find($company->id);
-
-        return view('doctors.show', ['company'=>$company]);
+        return view('doctors.show', ['doctor'=>$doctor]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Company  $company
+     * @param  \App\Models\Doctor  $Doctor
      * @return \Illuminate\Http\Response
      */
-    public function edit(Company $company)
+    public function edit(Doctor $doctor)
     {
-        return view('doctors.edit', ['company'=>$company]);
+        return view('doctors.edit', ['doctor'=>$doctor]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Company  $company
+     * @param  \App\Models\Doctor  $Doctor
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Company $company)
+    public function update(Request $request, Doctor $doctor)
     {
-        $companyUpdate = Company::where('id', $company->id)
+        $DoctorUpdate = Doctor::where('id', $doctor->id)
                             ->update([
                                 'name'=>$request->input('name'),
-                                'description'=>$request->input('description')
+                                'position' => $request->input('position'),
+                                'age' => $request->input('age'),
+                                'email' => $request->input('email'),
+                                'contact_number' => $request->input('contact_number'),
                             ]);
 
-        if($companyUpdate){
-            return redirect()->route('doctors.show', ['company'=>$company->id])
-            ->with('success', 'Company updated successfully');
+        if($DoctorUpdate){
+            return redirect()->route('doctors.show', ['Doctor'=>$doctor->id])
+            ->with('success', 'Doctor updated successfully');
         }
 
         // go back to the page where we coming from
@@ -109,18 +110,18 @@ class DoctorsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Company  $company
+     * @param  \App\Models\Doctor  $company
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Company $company)
+    public function destroy(Doctor $doctor)
     {
-        $findCompany = Company::find($company->id);
-        if($findCompany->delete()){
+        $findDoctor = Doctor::find($doctor->id);
+        if($findDoctor->delete()){
 
             return redirect()->route('doctors.index')
-            ->with('success', 'Company deleted successfully');
+            ->with('success', 'Doctor was deleted successfully');
         }
 
-        return back()->withInput()->with('error', 'Company could not be deleted');
+        return back()->withInput()->with('error', 'Doctor could not be deleted');
     }
 }

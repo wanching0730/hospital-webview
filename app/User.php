@@ -16,8 +16,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name', 'email', 'password',
-        'first_name', 'middle_name', 'last_name',
-        'city', 'role_id'
+        'contact_number', 'city'
     ];
 
     /**
@@ -29,23 +28,7 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];    
 
-    public function comments(){
-        return $this->hasMany('App\Comment');
-    }
-
-    public function companies(){
-        return $this->hasMany('App\Company');
-    }
-
-    public function role(){
-        return $this->belongsTo('App\Role');
-    }
-
-    public function tasks(){
-        return $this->belongsToMany('App\Task');
-    }
-    
-    public function projects(){
-        return $this->belongsToMany('App\Project');
+    public function doctors(){
+        return $this->hasMany('App\Doctor');
     }
 }

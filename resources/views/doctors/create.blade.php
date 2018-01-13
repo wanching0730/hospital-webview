@@ -1,62 +1,94 @@
-@extends('layouts.app')
+<div class="container">
 
-@section('content')
-    <div class="col-md-9 col-lg-9 col-sm-9 pull-left">          
+@include('partials.errors')
+@include('partials.success')
+
+<div class="row">
+
+<div class="row col-md-9 col-lg-9 col-sm-9 pull-left" style="background: white;">
+
+  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+  <h1>Add new doctor </h1>
 
       <!-- Example row of columns -->
-      <div class="row col-md-12 col-lg-12 col-sm-12" style="background: white; margin: 10px">
+    <div class="row  col-md-12 col-lg-12 col-sm-12" >
 
-        <form method="post" action="{{ route('companies.store') }}">
-            {{csrf_field()}}
+      <form method="post" action="{{ route('doctors.store') }}">
+                            {{ csrf_field() }}
 
-            <div class="form-group">
-              <label for="company-name">Name<span class="required">*</span></label>
-              <input placeholder="Enter name"
-                      id="company-name" 
-                      required
-                      name="name"
-                      spellcheck="false"
-                      class="form-control" />
-              </div>
+                            <div class="form-group">
+                                <label for="doctor-name">Name<span class="required">*</span></label>
+                                <input placeholder="Enter name"  
+                                          id="doctor-name"
+                                          required
+                                          name="name"
+                                          spellcheck="false"
+                                          class="form-control"
+                                           />
+                            </div>
 
-              <div class="form-group">
-                <label for="company-content">Description</label>
-                <textarea placeholder="Enter description"
-                        style="resize: vertical"
-                        id="company-description"
-                        name="description"
-                        rows="5"                     
-                        spellcheck="false"
-                        class="form-control autosize-target text-left">
-                        </textarea>
-              </div>
+                            <div class="form-group">
+                                <label for="doctor-position">Position</label>
+                                <input placeholder="Enter position"                                       
+                                          id="doctor-position"
+                                          name="position"
+                                          class="form-control"/>  
+                            </div>
 
-              <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Submit"/>
-              </div>
-        </form>
-        
-      </div>     
+                            <div class="form-group">
+                                <label for="doctor-age">Age</label>
+                                <input placeholder="Enter age"                                       
+                                          id="doctor-age"
+                                          name="age"
+                                          class="form-control"/>  
+                            </div>
 
+                            <div class="form-group">
+                                <label for="doctor-email">Email</label>
+                                <input placeholder="Enter email"                                       
+                                          id="doctor-email"
+                                          name="email"
+                                          type="email"
+                                          class="form-control"/>  
+                            </div>
+
+                            <div class="form-group">
+                                <label for="doctor-phone">Phone Number</label>
+                                <input placeholder="Enter phone number"                                       
+                                          id="doctor-phone"
+                                          name="contact_number"
+                                          class="form-control"/>  
+                            </div>
+
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-primary"
+                                       value="Submit"/>
+                            </div>
+                        </form>
     </div>
+</div>
 
-    <div class="col-sm-3 col-md-3 col-lg-3 pull-right">       
 
-
+<div class="col-sm-3 col-md-3 col-lg-3 pull-right">
+          <!--<div class="sidebar-module sidebar-module-inset">
+            <h4>About</h4>
+            <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+          </div> -->
           <div class="sidebar-module">
             <h4>Actions</h4>
             <ol class="list-unstyled">
-              <li><a href="/companies">My Companies</a></li>
+              <li><a href="/doctors"> <i class="fa fa-building-o" aria-hidden="true"></i>List of Doctors</a></li>
+              
             </ol>
           </div>
 
           <!--<div class="sidebar-module">
-            <h4>Archives</h4>
+            <h4>Members</h4>
             <ol class="list-unstyled">
               <li><a href="#">March 2014</a></li>
             </ol>
-          </div>-->
-
+          </div> -->
+        </div>
     </div>
-
-@endsection
+ </div>

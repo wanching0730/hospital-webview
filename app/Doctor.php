@@ -4,11 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Company extends Model
+class Doctor extends Model
 {
     protected $fillable = [
         'name',
-        'description',
+        'position', 'age', 'email', 'contact_number',
         'user_id'
     ];
 
@@ -16,7 +16,7 @@ class Company extends Model
         return $this->belongsTo('App\User');
     }
 
-    public function projects(){
-        return $this->hasMany('App\Project');
+    public function appointments(){
+        return $this->hasMany('App\Appointment');
     }
 }
