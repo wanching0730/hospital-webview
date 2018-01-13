@@ -35,4 +35,12 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'firebase' => [
+        'api_key' => 'AIzaSyA6Y_7OdJpKD1SiRH99kie_DjIByBmI0KA', // Only used for JS integration
+        'auth_domain' => 'pocket-health-advisor.firebaseapp.com', // Only used for JS integration
+        'database_url' => 'https://pocket-health-advisor.firebaseio.com',
+        'secret' => 'DATABASE_SECRET',
+        'storage_bucket' => 'pocket-health-advisor.appspot.com', // Only used for JS integration
+    ],
+
 ];

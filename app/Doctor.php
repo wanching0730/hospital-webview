@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Mpociot\Firebase\SyncsWithFirebase;
 
 class Doctor extends Model
 {
@@ -19,4 +20,6 @@ class Doctor extends Model
     public function appointments(){
         return $this->hasMany('App\Appointment');
     }
+
+    use SyncsWithFirebase;
 }

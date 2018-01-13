@@ -27,3 +27,11 @@ Route::resource('appointments', 'AppointmentsController', ['except' => ['index']
 
 
 //Route::get('appointments/{doctor_id}', 'AppointmentsController@index')->name('appointments.index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
