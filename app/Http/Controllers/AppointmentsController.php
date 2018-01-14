@@ -55,7 +55,7 @@ class AppointmentsController extends Controller
             ->with('success' , 'Appointment details added successfully');
         }
 
-        return back()->withInput()->with('errors', 'Error adding new appointment');
+        return back()->withInput()->with('errors', 'Error in adding new appointment');
     }
 
     /**
@@ -66,7 +66,8 @@ class AppointmentsController extends Controller
      */
     public function show(Appointment $appointment)
     {
-        $appointment = Appointment::find($appointment->id);
+
+        //$appointment = Appointment::find($appointment->id);
 
         return view('appointments.show', ['appointment'=>$appointment]);
     }

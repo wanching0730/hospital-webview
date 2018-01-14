@@ -1,11 +1,14 @@
-<div class="container">
+@extends('layouts.app')
 
-@include('partials.errors')
-@include('partials.success')
+@section('content')
 
-<div class="row">
-
-<link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <nav aria-label="breadcrumb" style="background-color: transparent;">
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('doctors.index') }}">Doctors</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{ $doctor->name }}</li>
+        </ol>
+    </nav>
 
 <div class="row col-md-9 col-lg-9 col-sm-9 pull-left ">
       <!-- The justified navigation menu is meant for single line per list item.
@@ -45,7 +48,7 @@
               <li><a href="/doctors/{{ $doctor->id }}/edit">Edit</a></li>
               <li><a href="/appointments/create">Add Appointments</a></li>
               <li><a href="/doctors">List of Doctors</a></li>
-              <li><a href="/appointments/{{$doctor->id}}/1">List of Appointments</a></li>
+              <li><a href="/appointments/{{$doctor->id}}">List of Appointments</a></li>
             
             <br/>
 
@@ -86,5 +89,7 @@
 
       </div>
  </div>
+
+@endsection
 
 

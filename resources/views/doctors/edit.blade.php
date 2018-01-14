@@ -1,4 +1,7 @@
+@extends('layouts.app')
 
+@section('content')
+    
     <div class="col-md-9 col-lg-9 col-sm-9 pull-left" style="background: white;">   
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -14,20 +17,15 @@
             <!--hidden form-->
             <input type="hidden" name="_method" value="put">
 
-            <div class="form-group">
-              
-            <div class="form-group">
-
-               {{ csrf_field() }}
-
-                <label for="doctor-name">Name<span class="required">*</span></label>
-                <input placeholder="Enter name"  
-                          id="doctor-name"
-                          required
-                          name="name"
-                          spellcheck="false"
-                          class="form-control"
-                            />
+                <div class="form-group">        
+                    <label for="doctor-name">Name<span class="required">*</span></label>
+                    <input placeholder="Enter name"  
+                              id="doctor-name"
+                              required
+                              name="name"
+                              spellcheck="false"
+                              class="form-control"
+                                />
                 </div>
 
                 <div class="form-group">
@@ -84,3 +82,5 @@
           </div>
 
     </div>
+
+@endsection

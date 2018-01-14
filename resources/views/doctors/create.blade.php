@@ -1,11 +1,8 @@
-<div class="container">
+@extends('layouts.app')
 
-@include('partials.errors')
-@include('partials.success')
+@section('content')
 
-<div class="row">
-
-<div class="row col-md-9 col-lg-9 col-sm-9 pull-left" style="background: white;">
+<div class="row col-md-9 col-lg-9 col-sm-9 pull-left">
 
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
@@ -92,3 +89,5 @@
         </div>
     </div>
  </div>
+
+@endsection

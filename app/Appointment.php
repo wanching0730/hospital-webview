@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Mpociot\Firebase\SyncsWithFirebase;
 
 class Appointment extends Model
 {
@@ -16,4 +17,6 @@ class Appointment extends Model
     public function doctor(){
         return $this->belongsTo('App\Doctor');
     }
+
+    use SyncsWithFirebase;
 }
