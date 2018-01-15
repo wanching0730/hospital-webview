@@ -14,7 +14,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-    <script src="https://use.fontawesome.com/874dbadbd7.js"></script>
+    <script src="https://use.fontawesome.com/e904540c2b.js"></script>
 
     <style>
         body {
