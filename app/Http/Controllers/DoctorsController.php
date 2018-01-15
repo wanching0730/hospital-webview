@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Doctor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Mpociot\Firebase\SyncsWithFirebase;
 
 class DoctorsController extends Controller
 {
@@ -15,10 +16,16 @@ class DoctorsController extends Controller
      */
     public function index()
     {
-        $doctors = Doctor::all();
+        if(Auth::check()) { 
 
-        //pass $doctors to index 
-        return view('doctors.index', ['doctors'=>$doctors]);        
+            $doctors = Doctor::where('user_id', Auth::user()->id)->get();
+
+            //pass $doctors to index 
+            return view('doctors.index', ['doctors'=>$doctors]);        
+        }
+
+        return view('auth.login');
+        
     }
 
     /**
@@ -126,6 +133,8 @@ class DoctorsController extends Controller
     }
 
     public function call(){
+        //$doctors = getFirebaseSyncData();
+        //return view('doctors.call', ['doctors'=>$doctors]);
         return view('doctors.call');
     }
 }

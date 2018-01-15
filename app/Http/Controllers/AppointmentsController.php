@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Appointment;
 use App\Doctor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Mpociot\Firebase\SyncsWithFirebase;
 
 class AppointmentsController extends Controller
 {
@@ -15,10 +17,15 @@ class AppointmentsController extends Controller
      */
     public function index()
     {
-        $appointments = Appointment::all();
-        $doctors = Doctor::all();
+        if(Auth::check()) { 
 
-        return view('appointments.index', ['appointments'=> $appointments, 'doctors'=>$doctors]);  
+            $appointments = Appointment::where('user_id', Auth::user()->id)->get();
+            $doctors = Doctor::where('user_id', Auth::user()->id)->get();
+
+            return view('appointments.index', ['appointments'=> $appointments, 'doctors'=>$doctors]); 
+        }
+        
+        return view('auth.login');
     }
 
     /**
@@ -28,7 +35,7 @@ class AppointmentsController extends Controller
      */
     public function create()
     {
-        $doctors = Doctor::all();
+        $doctors = Doctor::where('user_id', Auth::user()->id)->get();
 
         return view('appointments.create', ['doctors'=>$doctors]);
     }
@@ -48,7 +55,8 @@ class AppointmentsController extends Controller
             'description' => $request->input('description'),
             'date' => $request->input('date'),
             'time' => $request->input('time'),
-            'doctor_id' => $request->input('doctor_id')
+            'doctor_id' => $request->input('doctor_id'),
+            'user_id' => Auth::user()->id
         ]);
 
         if($appointment){
@@ -67,7 +75,6 @@ class AppointmentsController extends Controller
      */
     public function show(Appointment $appointment)
     {
-
         //$appointment = Appointment::find($appointment->id);
 
         return view('appointments.show', ['appointment'=>$appointment]);

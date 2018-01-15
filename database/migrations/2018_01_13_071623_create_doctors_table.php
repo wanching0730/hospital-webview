@@ -13,19 +13,21 @@ class CreateDoctorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('doctors', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
-            $table->string('position');
-            $table->integer('age');
-            $table->string('email');
-            $table->string('contact_number');
-            $table->integer('user_id')->unsigned();
-            
-            $table->foreign('user_id')->references('id')->on('users');
+        if(!Schema::hasTable('doctors')){
+            Schema::create('doctors', function (Blueprint $table) {
+                $table->increments('id');
+                $table->string('name');
+                $table->string('position');
+                $table->integer('age');
+                $table->string('email');
+                $table->string('contact_number');
+                $table->integer('user_id')->unsigned();
+                
+                $table->foreign('user_id')->references('id')->on('users');
 
-            $table->timestamps();
-        });
+                $table->timestamps();
+            });
+         }
     }
 
     /**

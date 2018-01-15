@@ -42,6 +42,17 @@ trait SyncsWithFirebase
     }
 
     /**
+     * @return array
+     */
+    protected function getFirebaseSyncData()
+    {
+        if ($fresh = $this->fresh()) {
+            return $fresh->toArray();
+        }
+        return [];
+    }
+
+    /**
      * @param $mode
      */
     protected function saveToFirebase($mode)

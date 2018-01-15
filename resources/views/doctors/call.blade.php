@@ -12,6 +12,10 @@
 </head>
 
 <body>
+
+<?php
+var_dump($doctors);
+?>
 	<div class="top1">
 		<h1>Video calling</h1>
 	</div>

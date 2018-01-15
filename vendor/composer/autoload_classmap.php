@@ -42,7 +42,7 @@ return array(
     'Collective\\Html\\HtmlBuilder' => $vendorDir . '/laravelcollective/html/src/HtmlBuilder.php',
     'Collective\\Html\\HtmlFacade' => $vendorDir . '/laravelcollective/html/src/HtmlFacade.php',
     'Collective\\Html\\HtmlServiceProvider' => $vendorDir . '/laravelcollective/html/src/HtmlServiceProvider.php',
-    'CreateAppointmentsTable' => $baseDir . '/database/migrations/2018_01_13_071721_create_appointments_table.php',
+    'CreateAppointmentsTable' => $baseDir . '/database/migrations/2018_01_15_155146_create_appointments_table.php',
     'CreateDoctorsTable' => $baseDir . '/database/migrations/2018_01_13_071623_create_doctors_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2018_01_13_071510_create_users_table.php',

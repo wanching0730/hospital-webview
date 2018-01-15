@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Mpociot\Firebase\SyncsWithFirebase;
 
 class User extends Authenticatable
 {
@@ -31,4 +32,6 @@ class User extends Authenticatable
     public function doctors(){
         return $this->hasMany('App\Doctor');
     }
+
+    use SyncsWithFirebase;
 }

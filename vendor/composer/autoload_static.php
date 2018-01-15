@@ -325,7 +325,7 @@ class ComposerStaticInit626528ad5e942acdb112d67df6264832
         'Collective\\Html\\HtmlBuilder' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlBuilder.php',
         'Collective\\Html\\HtmlFacade' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlFacade.php',
         'Collective\\Html\\HtmlServiceProvider' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlServiceProvider.php',
-        'CreateAppointmentsTable' => __DIR__ . '/../..' . '/database/migrations/2018_01_13_071721_create_appointments_table.php',
+        'CreateAppointmentsTable' => __DIR__ . '/../..' . '/database/migrations/2018_01_15_155146_create_appointments_table.php',
         'CreateDoctorsTable' => __DIR__ . '/../..' . '/database/migrations/2018_01_13_071623_create_doctors_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2018_01_13_071510_create_users_table.php',
