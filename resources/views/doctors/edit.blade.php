@@ -23,6 +23,7 @@
                               id="doctor-name"
                               required
                               name="name"
+                              value="{{$doctor->name}}"
                               spellcheck="false"
                               class="form-control"
                                 />
@@ -33,6 +34,7 @@
                     <input placeholder="Enter position"                                       
                               id="doctor-position"
                               name="position"
+                              value="{{$doctor->position}}"
                               class="form-control"/>  
                 </div>
 
@@ -41,6 +43,7 @@
                     <input placeholder="Enter age"                                       
                               id="doctor-age"
                               name="age"
+                              value="{{$doctor->age}}"
                               class="form-control"/>  
                 </div>
 
@@ -49,6 +52,7 @@
                     <input placeholder="Enter email"                                       
                               id="doctor-email"
                               name="email"
+                              value="{{$doctor->email}}"
                               type="email"
                               class="form-control"/>  
                 </div>
@@ -58,6 +62,7 @@
                     <input placeholder="Enter phone number"                                       
                               id="doctor-phone"
                               name="contact_number"
+                              value="{{$doctor->contact_number}}"
                               class="form-control"/>  
                 </div>
 

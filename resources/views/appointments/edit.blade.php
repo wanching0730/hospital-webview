@@ -23,32 +23,32 @@
                                       id="appointment-description"
                                       required
                                       name="description"
+                                      value="{{$appointment->description}}"
                                       spellcheck="false"
                                       class="form-control"/>
                               </div>                               
 
-                            @if($doctors != null)
-                            <div class="form-group">
-                                <label for="doctor_id">Select doctor</label>
-
-                                <select name="doctor_id" class="form-control" > 
-
-                                @foreach($doctors as $doctor)
-                                    <option value="{{$doctor->id}}"> {{$doctor->name}} </option>
-                                @endforeach
-                                </select>
+                              <div class="form-group">
+                                <label for="patient-name">Doctor Name</label>
+                                <input placeholder="Enter doctor name"                                          
+                                          id="doctor-name"
+                                          name="doctor_name"
+                                          value="{{$doctor->name}}"
+                                          disabled="disabled"
+                                          spellcheck="false"
+                                          class="form-control"/>
                             </div>
-                            @endif
+
 
                             <div class="form-group">
                                 <label for="patient-name">Patient Name</label>
                                 <input placeholder="Enter patient name"                                          
                                           id="patient-name"
                                           name="patient_name"
+                                          value="{{$appointment->patient_name}}"
                                           required
                                           spellcheck="false"
                                           class="form-control"/>
-
                             </div>
 
                             <div class="form-group">
@@ -56,6 +56,7 @@
                                 <input placeholder="Enter appointment date"                                          
                                           id="appointment-date"
                                           name="date"
+                                          value="{{$appointment->date}}"
                                           required
                                           spellcheck="false"
                                           class="form-control"/>
@@ -67,6 +68,7 @@
                                 <input placeholder="Enter patient name"                                          
                                           id="appointment-time"
                                           name="time"
+                                          value="{{$appointment->time}}"
                                           required
                                           spellcheck="false"
                                           class="form-control"/>

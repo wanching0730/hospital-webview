@@ -82,9 +82,9 @@ class AppointmentsController extends Controller
     public function edit(Appointment $appointment)
     {
         $appointment = Appointment::find($appointment->id);
-        $doctors = Doctor::all();
+        $doctor = Doctor::where('id', $appointment->doctor_id)->first();
          
-         return view('appointments.edit', ['appointment'=>$appointment, 'doctors'=>$doctors]);
+         return view('appointments.edit', ['appointment'=>$appointment, 'doctor'=>$doctor]);
     }
 
     /**
@@ -137,12 +137,9 @@ class AppointmentsController extends Controller
     public function listDoctorApp ($doctor_id)
     {
         $doctor_appointments = Appointment::where('doctor_id', $doctor_id)->get();
-        $doctor = Doctor::where('id', $doctor_id)->get();
+        $doctor = Doctor::where('id', $doctor_id)->first();
 
         return view('appointments.list', ['doctor_appointments'=> $doctor_appointments, 'doctor'=> $doctor]);
-        
-    );  
-
-        
+    
     }
 }
