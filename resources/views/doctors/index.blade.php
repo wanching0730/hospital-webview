@@ -26,7 +26,7 @@
     </style>
 
     <div class="panel-heading"><a  class="pull-right btn btn-primary btn-sm" href="/doctors/create">
-    <i class="fa fa-plus-square" aria-hidden="true"></i>  Add new appointment</a> </div>
+    <i class="fa fa-plus-square" aria-hidden="true"></i>  Add New Doctor</a> </div>
     </br></br>
         <table class="table table-hover table-dark" border="1">
             <thead>

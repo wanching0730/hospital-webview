@@ -13,11 +13,12 @@ class AppointmentsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($doctor_id)
+    public function index()
     {
-        $appointments = Appointment::where('doctor_id', $doctor_id)->get();
+        $appointments = Appointment::all();
+        $doctors = Doctor::all();
 
-        return view('appointments.index', ['appointments'=> $appointments]);  
+        return view('appointments.index', ['appointments'=> $appointments, 'doctors'=>$doctors]);  
     }
 
     /**
@@ -131,5 +132,17 @@ class AppointmentsController extends Controller
          }
  
          return back()->withInput()->with('error' , 'appointment could not be deleted');
+    }
+
+    public function listDoctorApp ($doctor_id)
+    {
+        $doctor_appointments = Appointment::where('doctor_id', $doctor_id)->get();
+        $doctor = Doctor::where('id', $doctor_id)->get();
+
+        return view('appointments.list', ['doctor_appointments'=> $doctor_appointments, 'doctor'=> $doctor]);
+        
+    );  
+
+        
     }
 }

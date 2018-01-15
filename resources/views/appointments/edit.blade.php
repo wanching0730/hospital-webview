@@ -2,11 +2,11 @@
 
 @section('content')
 
-<div class="row col-md-9 col-lg-9 col-sm-9 pull-left">
+<div class="row  col-md-12 col-lg-12 col-sm-12">
 
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-  <h1>Edit Appointment Details</h1>
+  <h1 align="center">Update Appointment Details</h1>
 
       <!-- Example row of columns -->
     <div class="row  col-md-12 col-lg-12 col-sm-12" >
@@ -82,20 +82,6 @@
 
     </div>
 
-    <div class="col-sm-3 col-md-3 col-lg-3 pull-right">       
-
-
-          <div class="sidebar-module">
-            <h4>Actions</h4>
-            <ol class="list-unstyled">
-              <li><a href="/appointment/{{$appointment->id}}">View Current Appointment</a></li>
-              <li><a href="/appointments">List of Appointments</a></li>
-            </ol>
-          </div>
-
-       </div>
-
-    </div>
 </div>
 
 @endsection

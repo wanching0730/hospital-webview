@@ -2,7 +2,7 @@
 
 @section('content')
     
-    <div class="col-md-9 col-lg-9 col-sm-9 pull-left" style="background: white;">   
+    <div class="row col-md-12 col-lg-12 col-sm-12">   
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
@@ -70,17 +70,5 @@
       </div>     
 
     </div>
-
-    <div class="col-sm-3 col-md-3 col-lg-3 pull-right">  
-
-          <div class="sidebar-module">
-            <h4>Actions</h4>
-            <ol class="list-unstyled">
-              <li><a href="/doctors/{{$doctor->id}}">View Doctor</a></li>
-              <li><a href="/doctors">Doctors List</a></li>
-            </ol>
-          </div>
-
-    </div>
-
+    
 @endsection

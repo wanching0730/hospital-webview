@@ -79,12 +79,13 @@
                 </li>
      
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <a href="{{ route('home') }}">Home</a>
-                <a href="{{ route('doctors.index') }}">Doctors</a>
-                <a href="#">Contact Details</a>
+                <a href="{{ route('home') }}"><i class="fa fa-home" aria-hidden="true"></i>Home</a>
+                <a href="{{ route('doctors.index') }}"><i class="fa fa-user-md" aria-hidden="true"></i> Doctors</a>
+                <a href="{{ route('appointments.index') }}"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Appointments</a>
+                <a href="#"><i class="fa fa-phone" aria-hidden="true"></i>Contact Details</a>
             </div>
 
-            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Gion Hospital</span>
+            <span style="font-size:30px;cursor:pointer;color:white" onclick="openNav()">&#9776; Gion Hospital</span>
 
             <script>
                 function openNav() {
@@ -105,8 +106,9 @@
                     <li><a href="{{ route('register') }}"><i class="fa fa-user-plus" aria-hidden="true"></i> Register</a></li>
                 
                 @else
-                    <li><a href="{{ route('home') }}"><i class="fa fa-building" aria-hidden="true"></i> Home</a></li>
-                    <li><a href="{{ route('doctors.index') }}"><i class="fa fa-briefcase" aria-hidden="true"></i> Doctors</a></li>
+                    <li><a href="{{ route('home') }}"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+                    <li><a href="{{ route('doctors.index') }}"><i class="fa fa-user-md" aria-hidden="true"></i> Doctors</a></li>
+                    <li><a href="{{ route('appointments.index') }}"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Appointments</a></li>
 
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" 

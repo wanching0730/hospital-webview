@@ -22,6 +22,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('doctors', 'DoctorsController');
 Route::resource('users', 'UsersController');
 
+Route::get('appointments/listDoctorApp/{doctor_id}', 'AppointmentsController@listDoctorApp')->name('appointments.listDoctorApp');
+Route::resource('appointments', 'AppointmentsController');
+
 //Route::get('appointments/{doctor_id}', 'AppointmentsController@index')->name('appointments.index');
 // Route::get('appointments/create', 'AppointmentsController@create')->name('appointments.create');
 // Route::post('appointments', 'AppointmentsController@store')->name('appointments.store');
@@ -31,6 +34,6 @@ Route::resource('users', 'UsersController');
 // Route::delete('appointments/{appointment_id}', 'AppointmentsController@destroy')->name('appointments.destroy');
 //Route::resource('appointments', 'AppointmentsController', ['except' => ['index']]);
 
-Route::resource('appointments', 'AppointmentsController');
+
 
 

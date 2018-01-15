@@ -2,7 +2,8 @@
 
 @section('content')
 
-     <div class="row col-md-9 col-lg-9 col-sm-9 pull-left ">
+
+    <div class="row col-md-9 col-lg-9 col-sm-9 pull-left ">
           <!-- The justified navigation menu is meant for single line per list item.
               Multiple lines will require custom code not provided by Bootstrap. -->
           <!-- Jumbotron -->
@@ -24,8 +25,8 @@
           <div class="sidebar-module">
             <h4>Actions</h4>
             <ol class="list-unstyled">
-              <li><a href="/appointments/{{ $appointment->id }}/edit">Edit</a></li>
-              <li><a href="/appointments/create">Add New Appointment</a></li>             
+              <li><a href="/appointments/{{ $appointment->id }}/edit"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a></li>
+              <li><a href="/appointments/create"><i class="fa fa-plus" aria-hidden="true"></i> Add</a></li>             
             
             <br/>            
             
@@ -39,9 +40,7 @@
                               document.getElementById('delete-form').submit();
                       }
                           "
-                          >
-                  Delete
-              </a>
+                          ><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
 
               <form id="delete-form" action="{{ route('appointments.destroy',[$appointment->id]) }}" 
                 method="POST" style="display: none;">

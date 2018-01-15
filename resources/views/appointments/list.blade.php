@@ -5,7 +5,7 @@
     <nav aria-label="breadcrumb" style="background-color: lightblue;">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Appointments</li>
+            <li class="breadcrumb-item active" aria-current="page">{{ $doctor->name }}</li>
         </ol>
     </nav>
 
@@ -25,7 +25,7 @@
     </style>
 
     <div class="panel-heading"><a  class="pull-right btn btn-primary btn-sm" href="/appointments/create">
-    <i class="fa fa-plus-square" aria-hidden="true"></i>  Add New Appointment</a> </div>
+    <i class="fa fa-plus-square" aria-hidden="true"></i>  Add new appointment</a> </div>
     </br></br>
         <table class="table table-hover table-dark" border="1">
             <thead>
@@ -41,22 +41,15 @@
 
             <tbody>             
 
-                @foreach($appointments as $appointment)
-                  <!-- @foreach($doctors as $doctor)
-                    <?php 
-                      if($doctor->id == $appointment->doctor_id){
-                        $patient_doctor_name = $doctor->doctor_name;
-                      }
-                        
-                    ?>
-                  @endforeach -->
+                @foreach($doctor_appointments as $doctor_appointment)
+                  
                     <tr>
                         <th scope="row"></th>
-                        <td><i aria-hidden="true"></i> <a href="/appointments/{{ $appointment->id }}" >  {{ $appointment->description }}</a></li></td>                        
-                        <td>{{ $appointment->patient_name }}</td>
-                        <td>{{ $appointment->date }}</td>
-                        <td>{{ $appointment->time }}</td>
-                        <td><?php echo $patient_doctor_name; ?></td>
+                        <td><i aria-hidden="true"></i> <a href="/appointments/{{ $doctor_appointment->id }}" >  {{ $doctor_appointment->description }}</a></li></td>                        
+                        <td>{{ $doctor_appointment->patient_name }}</td>
+                        <td>{{ $doctor_appointment->date }}</td>
+                        <td>{{ $doctor_appointment->time }}</td>    
+                        <td>{{ $doctor_appointment->doctor_id }}</td>                   
                     </tr>
                 @endforeach
 
