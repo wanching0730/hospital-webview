@@ -4,6 +4,7 @@
 	<meta content="utf-8" http-equiv="encoding">
 	<title>Sinch VIDEO Sample app</title>
 	<link rel="stylesheet" href="css/call.css"/>
+    <link type="text/css" src="{{ URL::asset('css/call.css') }}" rel="stylesheet"></link>
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:300' rel='stylesheet' type='text/css'>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -65,8 +66,8 @@
 					<button id="hangup">Hangup</button>
 					<button id="answer">Answer</button>
 					
-					<audio id="ringback" src='style/ringback.wav' loop></audio>
-					<audio id="ringtone" src='style/phone_ring.wav' loop></audio>
+					<audio id="ringback" src="{{ URL::asset('ringback.wav') }}" loop></audio>
+					<audio id="ringtone" src="{{ URL::asset('phone_ring.wav') }}" loop></audio>
 				</form>
 			</div>
 			<div class="clearfix"><br></div>
