@@ -22,7 +22,8 @@
           <li class="lead">Patient Name: {{ $appointment->patient_name }}</li>
           <li class="lead">Date: {{ $appointment->date }}</li>
           <li class="lead">Time: {{ $appointment->time }}</li>
-        </ul>     
+        </ul>       
+
       </div>
 </div>
 

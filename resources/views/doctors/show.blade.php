@@ -26,6 +26,9 @@
           <li class="lead">Email: {{$doctor->email}} </li>
           <li class="lead">Contact Number: {{$doctor->contact_number}} </li>
         </ul>
+
+        <a class="pull-right btn btn-primary btn-sm" href="/doctors/call">Video Call</a>
+
        <!-- <p><a class="btn btn-lg btn-success" href="#" role="button">Get started today</a></p> -->
       </div>
 

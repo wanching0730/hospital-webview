@@ -19,7 +19,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('doctors/call', 'DoctorsController@call')->name('doctors.call');
 Route::resource('doctors', 'DoctorsController');
+
 Route::resource('users', 'UsersController');
 
 Route::get('appointments/listDoctorApp/{doctor_id}', 'AppointmentsController@listDoctorApp')->name('appointments.listDoctorApp');

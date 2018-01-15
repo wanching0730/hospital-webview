@@ -124,4 +124,8 @@ class DoctorsController extends Controller
 
         return back()->withInput()->with('error', 'Doctor could not be deleted');
     }
+
+    public function call(){
+        return view('doctors.call');
+    }
 }
