@@ -11,9 +11,6 @@
 
     <title>{{ config('app.name', 'Gion Hospital') }}</title>
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
     <script src="https://use.fontawesome.com/e904540c2b.js"></script>
 
     <style>

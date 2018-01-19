@@ -3,8 +3,8 @@
 	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 	<meta content="utf-8" http-equiv="encoding">
 	<title>Sinch VIDEO Sample app</title>
-	<link rel="stylesheet" href="css/call.css"/>
-    <link type="text/css" src="{{ URL::asset('css/call.css') }}" rel="stylesheet"></link>
+	<link rel="stylesheet" href="assets/css/call.css"/>
+    <!-- <link type="text/css" src="{{ URL::asset('css/call.css') }}" rel="stylesheet"></link> -->
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:300' rel='stylesheet' type='text/css'>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -86,7 +86,7 @@ var_dump($doctors);
 		</div>
 	</div>
 
-	<script type="text/javascript" src="{{ URL::asset('js/call.js') }}"></script>
+	<script src="assets/js/call.js"></script>
 
 </body>
 

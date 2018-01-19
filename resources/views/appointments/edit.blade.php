@@ -19,7 +19,7 @@
 
                             <div class="form-group">
                             <label for="appointment-name">Appointment Description<span class="required">*</span></label>
-                            <input   placeholder="Enter description"  
+                            <input placeholder="Enter description"  
                                       id="appointment-description"
                                       required
                                       name="description"

@@ -78,6 +78,15 @@ return [
             'prefix' => '',
         ],
 
+        'firebase' => [
+			'host'		=> 'https://pocket-health-advisor.firebaseio.com',
+			'token'		=> 'WipuqxGWtxmaZru32DEVUk5jyRK3IjQ8tlPcYVfS',
+			'timeout'	=> 10,
+			'sync'		=> false,			
+
+		],
+	
+
     ],
 
     /*
