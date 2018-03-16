@@ -40,6 +40,10 @@ class DoctorsController extends Controller
     public function store(Request $request)
     {
         if(Auth::check()){
+            $this->validate($request, [
+                'age' => 'required'
+            ]);
+
             $doctor = Doctor::create([
                 'name' => $request->input('name'),
                 'position' => $request->input('position'),

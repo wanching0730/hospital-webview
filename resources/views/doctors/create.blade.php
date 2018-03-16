@@ -2,6 +2,17 @@
 
 @section('content')
 
+<script>
+    function validate() {
+        var position = document.forms['myForm']["position"].value;
+
+        if(position == ""){
+            alert("position must be filled out");
+            return false
+        }
+    }
+</script>
+
 <div class="row col-md-12 col-lg-12 col-sm-12">
 
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -11,7 +22,7 @@
       <!-- Example row of columns -->
     <div class="row  col-md-12 col-lg-12 col-sm-12" >
 
-      <form method="post" action="{{ route('doctors.store') }}">
+      <form name="myForm" method="post" action="{{ route('doctors.store') }}" onSubmit="return validate()">
                             {{ csrf_field() }}
 
                             <div class="form-group">
@@ -22,6 +33,7 @@
                                           name="name"
                                           spellcheck="false"
                                           class="form-control"
+                                          value="{{old('name')}}"
                                            />
                             </div>
 
@@ -30,7 +42,8 @@
                                 <input placeholder="Enter position"                                       
                                           id="doctor-position"
                                           name="position"
-                                          class="form-control"/>  
+                                          class="form-control"
+                                          value="{{old('position')}}"/>  
                             </div>
 
                             <div class="form-group">
